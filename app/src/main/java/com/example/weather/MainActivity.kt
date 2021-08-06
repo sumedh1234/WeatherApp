@@ -1,6 +1,7 @@
 package com.example.weather
 
 import android.annotation.SuppressLint
+import android.content.res.Configuration
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -145,10 +146,21 @@ open class MainActivity : AppCompatActivity() {
 
         }
 
-        if (dayTime >= sunRise && dayTime < sunSet){
-            imageView.setBackgroundResource(R.drawable.day_background)
-        }else imageView.setBackgroundResource(R.drawable.night_background)
 
+        when(this.resources?.configuration?.uiMode?.and(Configuration.UI_MODE_NIGHT_MASK)){    // check night mode isEnabled or not
+            Configuration.UI_MODE_NIGHT_YES -> {
+//                Toast.makeText(this,"dark mode",Toast.LENGTH_SHORT).show()
+                if (dayTime >= sunRise && dayTime < sunSet){
+                    imageView.setBackgroundResource(R.drawable.dark_day)
+                }else imageView.setBackgroundResource(R.drawable.night_background)
+            }
+            Configuration.UI_MODE_NIGHT_NO -> {
+//                Toast.makeText(this,"light mode",Toast.LENGTH_SHORT).show()
+                if (dayTime >= sunRise && dayTime < sunSet){
+                    imageView.setBackgroundResource(R.drawable.day_background)
+                } else imageView.setBackgroundResource(R.drawable.light_night)
+            }
+        }
         
         //Temperature
         var temperature = response.getJSONObject("main").getString("temp")

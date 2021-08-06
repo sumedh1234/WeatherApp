@@ -3,9 +3,8 @@
 
     <gradient
         android:type="radial"
-        android:startColor="@color/cardview_dark_background"
+        android:startColor="@color/light_blue"
         android:endColor="@color/purple_700"
         android:angle="0"
         android:gradientRadius="50%p"/>
-
 </shape>
