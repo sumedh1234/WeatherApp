@@ -4,7 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="app/src/main/res/drawable/night_background.xml" value="0.1411184210526316" />
+        <entry key="app/src/main/res/drawable/splashback.xml" value="0.1411184210526316" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.15" />
+        <entry key="app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="app/src/main/res/layout/dialog_view.xml" value="0.1" />
       </map>
     </option>
